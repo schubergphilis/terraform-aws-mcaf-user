@@ -1,11 +1,11 @@
-output "name" {
-  value       = aws_iam_user.default.name
-  description = "The user name"
-}
-
 output "arn" {
   value       = aws_iam_user.default.arn
   description = "The user ARN"
+}
+
+output "name" {
+  value       = aws_iam_user.default.name
+  description = "The user name"
 }
 
 output "access_key_id" {
