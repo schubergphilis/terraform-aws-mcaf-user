@@ -5,19 +5,20 @@ variable "name" {
 
 variable "policy" {
   type        = string
+  default     = null
   description = "The policy to attach to the user"
+}
+
+variable "policy_arns" {
+  type        = set(string)
+  default     = []
+  description = "A set of policy ARNs to attach to the user"
 }
 
 variable "kms_key_id" {
   type        = string
-  default     = ""
+  default     = null
   description = "The KMS key ID used to encrypt all data"
-}
-
-variable "use_ssm" {
-  type        = bool
-  default     = false
-  description = "Store the access key ID and secret key in SSM"
 }
 
 variable "tags" {
