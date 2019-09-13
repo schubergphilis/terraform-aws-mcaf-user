@@ -1,7 +1,7 @@
 provider "aws" {}
 
 resource "aws_iam_user" "default" {
-  name = "${var.name}Account"
+  name = "${var.name}${var.postfix ? "Account" : ""}"
   tags = var.tags
 }
 
@@ -11,7 +11,7 @@ resource "aws_iam_access_key" "default" {
 
 resource "aws_iam_user_policy" "default" {
   count  = var.policy != null ? 1 : 0
-  name   = "${var.name}Policy"
+  name   = "${var.name}${var.postfix ? "Policy" : ""}"
   user   = aws_iam_user.default.name
   policy = var.policy
 }

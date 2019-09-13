@@ -21,6 +21,12 @@ variable "kms_key_id" {
   description = "The KMS key ID used to encrypt all data"
 }
 
+variable "postfix" {
+  type        = bool
+  default     = true
+  description = "Postfix the user and policy names with Account and Policy"
+}
+
 variable "tags" {
   type        = map(string)
   description = "A mapping of tags to assign to the user"
