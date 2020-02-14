@@ -3,6 +3,12 @@ variable "name" {
   description = "The name of the user"
 }
 
+variable "create_user" {
+  type        = bool
+  default     = true
+  description = "Whether or not to create the AWS user and associated resources"
+}
+
 variable "policy" {
   type        = string
   default     = null
