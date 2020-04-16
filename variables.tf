@@ -3,10 +3,10 @@ variable "name" {
   description = "The name of the user"
 }
 
-variable "force_create_policy" {
+variable "create_policy" {
   type        = bool
   default     = null
-  description = "Overrule whether the role policy has to be created."
+  description = "Overrule whether the user role policy has to be created"
 }
 
 variable "policy" {
