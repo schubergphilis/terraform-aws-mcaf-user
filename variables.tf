@@ -5,8 +5,8 @@ variable "name" {
 
 variable "force_create_policy" {
   type        = bool
-  default     = null
-  description = "Overrule whether the role policy has to be created."
+  default     = false
+  description = "Force creation of the user role policy"
 }
 
 variable "policy" {
