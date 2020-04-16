@@ -1,3 +1,7 @@
+locals {
+  create_policy = var.force_create_policy != null ? (var.force_create_policy ? 1 : 0): (var.policy != null ? 1 : 0)
+}
+
 provider "aws" {}
 
 resource "aws_iam_user" "default" {
@@ -10,7 +14,7 @@ resource "aws_iam_access_key" "default" {
 }
 
 resource "aws_iam_user_policy" "default" {
-  count  = var.policy != null ? 1 : 0
+  count  = local.create_policy
   name   = "${var.name}${var.postfix ? "Policy" : ""}"
   user   = aws_iam_user.default.name
   policy = var.policy
