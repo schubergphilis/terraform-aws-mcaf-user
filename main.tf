@@ -2,8 +2,6 @@ locals {
   create_policy = var.create_policy != null ? var.create_policy : var.policy != null
 }
 
-provider "aws" {}
-
 resource "aws_iam_user" "default" {
   name = "${var.name}${var.postfix ? "Account" : ""}"
   tags = var.tags
