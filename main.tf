@@ -3,7 +3,7 @@ locals {
 }
 
 resource "aws_iam_user" "default" {
-  name = "${var.name}${var.postfix ? "Account" : ""}"
+  name = "${var.name}${var.postfix ? "User" : ""}"
   tags = var.tags
 }
 

@@ -30,7 +30,7 @@ variable "kms_key_id" {
 variable "postfix" {
   type        = bool
   default     = true
-  description = "Postfix the user and policy names with Account and Policy"
+  description = "Postfix the user and policy names with User and Policy"
 }
 
 variable "tags" {
