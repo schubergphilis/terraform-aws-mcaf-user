@@ -9,6 +9,12 @@ variable "create_policy" {
   description = "Overrule whether the user role policy has to be created"
 }
 
+variable "create_ssm" {
+  type        = bool
+  default     = true
+  description = "Overrule whether the SSM entries for secret key and secret access key need to be created"
+}
+
 variable "policy" {
   type        = string
   default     = null
