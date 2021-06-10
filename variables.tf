@@ -35,5 +35,6 @@ variable "postfix" {
 
 variable "tags" {
   type        = map(string)
+  default     = null
   description = "A mapping of tags to assign to the user"
 }
