@@ -42,6 +42,7 @@ resource "aws_ssm_parameter" "secret_access_key" {
 }
 
 resource "aws_ssm_parameter" "ses_smtp_password_v4" {
+  count  = var.ssm_ses_smtp_password_v4 ? 1 : 0
   name   = "/${lower(var.name)}account/credentials/ses_smtp_password_v4"
   type   = "SecureString"
   value  = aws_iam_access_key.default.ses_smtp_password_v4

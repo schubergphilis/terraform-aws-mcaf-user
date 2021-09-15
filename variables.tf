@@ -33,6 +33,12 @@ variable "postfix" {
   description = "Postfix the user and policy names with Account and Policy"
 }
 
+variable "ssm_ses_smtp_password_v4" {
+  type        = bool
+  default     = false
+  description = "Set to true to store the user's SES SMTP password in the SSM Paramater Store"
+}
+
 variable "tags" {
   type        = map(string)
   description = "A mapping of tags to assign to the user"
