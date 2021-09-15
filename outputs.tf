@@ -36,6 +36,6 @@ output "ssm_secret_access_key" {
 }
 
 output "ssm_ses_smtp_password_v4" {
-  value       = var.ssm_ses_smtp_password_v4 ? aws_ssm_parameter.ses_smtp_password_v4.0.name : ""
+  value       = try(aws_ssm_parameter.ses_smtp_password_v4.0.name, "")
   description = "The SSM SES SMTP password parameter name"
 }

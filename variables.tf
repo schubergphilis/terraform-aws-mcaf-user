@@ -36,7 +36,7 @@ variable "postfix" {
 variable "ssm_ses_smtp_password_v4" {
   type        = bool
   default     = false
-  description = "Set to true to store the user's SES SMTP password in the SSM Paramater Store"
+  description = "Store the user's SES SMTP password in the SSM Parameter Store"
 }
 
 variable "tags" {
