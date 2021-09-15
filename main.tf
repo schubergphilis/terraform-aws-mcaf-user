@@ -40,3 +40,11 @@ resource "aws_ssm_parameter" "secret_access_key" {
   key_id = var.kms_key_id
   tags   = var.tags
 }
+
+resource "aws_ssm_parameter" "ses_smtp_password_v4" {
+  name   = "/${lower(var.name)}account/credentials/ses_smtp_password_v4"
+  type   = "SecureString"
+  value  = aws_iam_access_key.default.ses_smtp_password_v4
+  key_id = var.kms_key_id
+  tags   = var.tags
+}
