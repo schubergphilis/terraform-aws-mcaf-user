@@ -5,7 +5,7 @@ variable "name" {
 
 variable "create_policy" {
   type        = bool
-  default     = false
+  default     = null
   description = "Overrule whether the user role policy has to be created"
 }
 
