@@ -1,5 +1,6 @@
 locals {
   create_policy = var.create_policy != null ? var.create_policy : var.policy != null
+  groups        = local.create_policy ? setunion(var.groups, [aws_iam_group.default[0].name]) : var.groups
   ssm_name      = replace(var.name, "@", "_")
 }
 
@@ -12,18 +13,28 @@ resource "aws_iam_access_key" "default" {
   user = aws_iam_user.default.name
 }
 
-resource "aws_iam_user_policy" "default" {
+resource "aws_iam_group" "default" {
+  count = local.create_policy || length(var.policy_arns) > 0 ? 1 : 0
+  name  = "${var.name}${var.postfix ? "Group" : ""}"
+}
+
+resource "aws_iam_group_policy" "default" {
   count  = local.create_policy ? 1 : 0
   name   = "${var.name}${var.postfix ? "Policy" : ""}"
-  user   = aws_iam_user.default.name
+  group  = aws_iam_group.default[0].name
   policy = var.policy
 }
 
-resource "aws_iam_user_policy_attachment" "default" {
+resource "aws_iam_group_policy_attachment" "default" {
   for_each = var.policy_arns
 
-  user       = aws_iam_user.default.name
+  group      = aws_iam_group.default[0].name
   policy_arn = each.value
+}
+
+resource "aws_iam_user_group_membership" "default" {
+  user   = aws_iam_user.default.name
+  groups = local.groups
 }
 
 resource "aws_ssm_parameter" "access_key_id" {

@@ -9,6 +9,12 @@ variable "create_policy" {
   description = "Overrule whether the user role policy has to be created"
 }
 
+variable "groups" {
+  type        = set(string)
+  default     = []
+  description = "Set of group names to attach to the user"
+}
+
 variable "policy" {
   type        = string
   default     = null
@@ -30,7 +36,7 @@ variable "kms_key_id" {
 variable "postfix" {
   type        = bool
   default     = true
-  description = "Postfix the user and policy names with Account and Policy"
+  description = "Postfix the user, policy and group names with Account, Policy and Group"
 }
 
 variable "ssm_ses_smtp_password_v4" {
