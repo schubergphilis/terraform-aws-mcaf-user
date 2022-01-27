@@ -1,6 +1,6 @@
 locals {
   create_policy = var.create_policy != null ? var.create_policy : var.policy != null
-  groups        = local.create_policy ? setunion(var.groups, [aws_iam_group.default[0].name]) : var.groups
+  groups        = local.create_policy ? setunion(var.groups, [aws_iam_group.default[0].name]) : [aws_iam_group.default[0].name]
   ssm_name      = replace(var.name, "@", "_")
 }
 
