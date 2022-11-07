@@ -9,6 +9,11 @@ variable "create_policy" {
   description = "Overrule whether the user role policy has to be created"
 }
 
+variable "tfc_agent_role_configuration" {
+  type        = map(string)
+  description = "Configuration for TFC Cloud Agent support"
+}
+
 variable "groups" {
   type        = set(string)
   default     = []
@@ -48,4 +53,9 @@ variable "ssm_ses_smtp_password_v4" {
 variable "tags" {
   type        = map(string)
   description = "A mapping of tags to assign to the user"
+}
+
+variable "tfc_agent_accountid" {
+  type        = number
+  description = "AWS Account ID running Terraform Cloud Agents"
 }
