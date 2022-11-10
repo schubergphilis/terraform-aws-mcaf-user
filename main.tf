@@ -13,6 +13,10 @@ resource "aws_iam_access_key" "default" {
   user = aws_iam_user.default.name
 }
 
+// Our IAM users are not real users so not going to have MFA configured. Real users
+// should instead use AWS SSO and assume a role.
+//
+// tfsec:ignore:aws-iam-enforce-group-mfa
 resource "aws_iam_group" "default" {
   count = local.create_policy || length(var.policy_arns) > 0 ? 1 : 0
   name  = "${var.name}${var.postfix ? "Group" : ""}"
