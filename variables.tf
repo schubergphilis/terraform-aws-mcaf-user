@@ -15,10 +15,16 @@ variable "groups" {
   description = "Set of group names to attach to the user"
 }
 
+variable "path" {
+  type        = string
+  default     = "/"
+  description = "Path in which to create the user"
+}
+
 variable "permissions_boundary" {
   type        = string
   default     = null
-  description = "The permissions boundary to set on the user"
+  description = "The ARN of the policy that is used to set the permissions boundary for the user."
 }
 
 variable "policy" {

@@ -6,6 +6,7 @@ locals {
 
 resource "aws_iam_user" "default" {
   name                 = "${var.name}${var.postfix ? "Account" : ""}"
+  path                 = var.path
   permissions_boundary = var.permissions_boundary
   tags                 = var.tags
 }
