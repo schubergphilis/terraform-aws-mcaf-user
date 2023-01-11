@@ -5,8 +5,10 @@ locals {
 }
 
 resource "aws_iam_user" "default" {
-  name = "${var.name}${var.postfix ? "Account" : ""}"
-  tags = var.tags
+  name                 = "${var.name}${var.postfix ? "Account" : ""}"
+  path                 = var.path
+  permissions_boundary = var.permissions_boundary
+  tags                 = var.tags
 }
 
 resource "aws_iam_access_key" "default" {
