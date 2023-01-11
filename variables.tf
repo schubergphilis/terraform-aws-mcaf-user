@@ -15,6 +15,12 @@ variable "groups" {
   description = "Set of group names to attach to the user"
 }
 
+variable "permissions_boundary" {
+  type        = string
+  default     = null
+  description = "The permissions boundary to set on the user"
+}
+
 variable "policy" {
   type        = string
   default     = null
