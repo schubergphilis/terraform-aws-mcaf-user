@@ -1,6 +1,7 @@
 name-template: 'v$RESOLVED_VERSION'
 tag-template: 'v$RESOLVED_VERSION'
 version-template: '$MAJOR.$MINOR.$PATCH'
+change-title-escapes: '\<*_&'
 
 categories:
   - title: '🚀 Features'
@@ -16,7 +17,9 @@ categories:
   - title: '📖 Documentation'
     labels:
       - 'documentation'
-  - title: 'Other Changes'
+  - title: '🧺 Miscellaneous'
+    labels:
+      - 'misc'  
 
 version-resolver:
   major:
@@ -44,7 +47,7 @@ autolabeler:
       - '*.md'
     title:
       - '/documentation/i'
-      - '/docsi'
+      - '/docs/i'
   - label: 'bug'
     body:
       - '/bug/'
@@ -60,6 +63,7 @@ autolabeler:
       - '/enhancement\/.+/'
     title:
       - '/feature/i'
+      - '/feat/i'
       - '/enhancement/i'
   - label: 'breaking'
     body:
@@ -71,10 +75,11 @@ autolabeler:
       - '/major/i'
 
 exclude-labels:
-  - 'skip-changelog'
+  - 'no-release'
 
 template: |
   # What's Changed
 
   $CHANGES
+  
   **Full Changelog**: https://github.com/$OWNER/$REPOSITORY/compare/$PREVIOUS_TAG...v$RESOLVED_VERSION
