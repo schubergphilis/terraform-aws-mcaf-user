@@ -10,49 +10,6 @@ If an AWS Access Key is created, it is stored in the SSM Parameter Store and is 
 
 IMPORTANT: We do not pin modules to versions in our examples. We highly recommend that in your code you pin the version to the exact version you are using so that your infrastructure remains stable.
 
-## Contributor Guidelines
-
-### Opening a pull request
-
-1. Add one or multiple of the following labels to the PR: `breaking`, `enhancement`, `feature`, `bug`, `fix`, `security`, `documentation`. Based on certain keywords in the `title`, `body`, `branch`, labels are automatically added to your PR.
-
-2. We require pull request titles to follow the [Conventional Commits specification](https://www.conventionalcommits.org/en/v1.0.0/)
-
-### Release flow
-
-1. Every time a PR is merged, a draft release note is created or updated to add an entry for this change. The release version is automatically incremented.
-
-2. When ready to publish the release, we use the drafted release note to do so. `MCAF Contributors` are able to publish releases.
-    - Browse to the release page
-    - Edit the release you want to publish (click on the pencil)
-    - Click `Update release` (the green button at the bottom of the page)
-
-If a PR should not be added to the release notes and changelog, add the label `no-release` to your PR.
-
-## Local Development
-
-To make local development easier, we have added a pre-commit configuration to the repo. to use it, follow these steps:
-
-Install the following tools:
-
-```brew install tflint```
-
-Install pre-commit:
-
-```pip3 install pre-commit --upgrade```
-
-To run the pre-commit hooks to see if everything working as expected, (the first time run might take a few minutes):
-
-```pre-commit run -a```
-
-To install the pre-commit hooks to run before each commit:
-
-```pre-commit install```
-
-## Licensing
-
-100% Open Source and licensed under the Apache License Version 2.0.
-
 <!-- BEGIN_TF_DOCS -->
 ## Requirements
 
@@ -115,3 +72,7 @@ No modules.
 | <a name="output_ssm_secret_access_key"></a> [ssm\_secret\_access\_key](#output\_ssm\_secret\_access\_key) | The SSM secret access key parameter name |
 | <a name="output_ssm_ses_smtp_password_v4"></a> [ssm\_ses\_smtp\_password\_v4](#output\_ssm\_ses\_smtp\_password\_v4) | The SSM SES SMTP password parameter name |
 <!-- END_TF_DOCS -->
+
+## Licensing
+
+100% Open Source and licensed under the Apache License Version 2.0.
