@@ -75,7 +75,7 @@ autolabeler:
       - '/major/i'
 
 exclude-labels:
-  - 'no-release'
+  - 'no-changelog'
 
 template: |
   # What's Changed
