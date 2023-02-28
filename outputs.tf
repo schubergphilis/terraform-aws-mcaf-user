@@ -1,3 +1,8 @@
+output "access_key_id" {
+  value       = aws_iam_access_key.default.id
+  description = "The access key ID"
+}
+
 output "arn" {
   value       = aws_iam_user.default.arn
   description = "The user ARN"
@@ -6,11 +11,6 @@ output "arn" {
 output "name" {
   value       = aws_iam_user.default.name
   description = "The user name"
-}
-
-output "access_key_id" {
-  value       = aws_iam_access_key.default.id
-  description = "The access key ID"
 }
 
 output "secret_access_key" {
@@ -36,6 +36,6 @@ output "ssm_secret_access_key" {
 }
 
 output "ssm_ses_smtp_password_v4" {
-  value       = try(aws_ssm_parameter.ses_smtp_password_v4.0.name, "")
+  value       = try(aws_ssm_parameter.ses_smtp_password_v4[0].name, "")
   description = "The SSM SES SMTP password parameter name"
 }
