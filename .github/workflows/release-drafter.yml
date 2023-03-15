@@ -5,7 +5,7 @@ on:
     branches:
       - master
       - main
-  
+
 permissions:
       # write permission is required to create a github release
       contents: write
