@@ -2,7 +2,7 @@
 
 Terraform module to create an IAM user. Suitable for e.g. CI/CD systems or systems which are external to AWS that cannot leverage AWS IAM Roles, AWS IAM Instance Profiles or AWS OIDC.
 
-It's not recommended creating IAM users this way for any other purpose.
+It is NOT recommended creating IAM users this way for any other purpose.
 
 It is recommended that IAM policies be applied directly to groups and roles but not users. This module by default attaches the IAM policy to an IAM group with the same name instead of directly to the user.
 
