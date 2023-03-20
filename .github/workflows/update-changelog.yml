@@ -12,4 +12,4 @@ jobs:
   terraform:
     uses: schubergphilis/mcaf-github-workflows/.github/workflows/update-changelog.yml@main
     secrets:
-      mcaf-github-token: ${{secrets.MCAF_GITHUB_TOKEN}}
+      mcaf-github-token: ${{ secrets.MCAF_GITHUB_TOKEN }}
