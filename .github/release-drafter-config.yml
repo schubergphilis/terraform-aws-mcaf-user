@@ -19,7 +19,7 @@ categories:
       - 'documentation'
   - title: '🧺 Miscellaneous'
     labels:
-      - 'misc'  
+      - 'misc'
 
 version-resolver:
   major:
@@ -81,5 +81,5 @@ template: |
   # What's Changed
 
   $CHANGES
-  
+
   **Full Changelog**: https://github.com/$OWNER/$REPOSITORY/compare/$PREVIOUS_TAG...v$RESOLVED_VERSION

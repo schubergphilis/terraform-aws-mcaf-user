@@ -75,4 +75,4 @@ No modules.
 
 ## Licensing
 
-100% Open Source and licensed under the Apache License Version 2.0.
+100% Open Source and licensed under the Apache License Version 2.0. See [LICENSE](https://github.com/schubergphilis/terraform-aws-mcaf-user/blob/master/LICENSE) for full details.
