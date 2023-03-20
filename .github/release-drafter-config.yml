@@ -74,6 +74,9 @@ autolabeler:
       - '/breaking/i'
       - '/major/i'
 
+exclude-contributors:
+  - 'github-actions[bot]'
+
 exclude-labels:
   - 'no-changelog'
 
