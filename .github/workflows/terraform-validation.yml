@@ -12,4 +12,4 @@ env:
 
 jobs:
   terraform:
-    uses: schubergphilis/mcaf-github-workflows/.github/workflows/pr-validation.yml@main
+    uses: schubergphilis/mcaf-github-workflows/.github/workflows/terraform-validation.yml@main
