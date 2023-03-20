@@ -10,6 +10,6 @@ permissions:
 
 jobs:
   terraform:
-    uses: schubergphilis/mcaf-github-workflows/.github/workflows/pr-validation.yml@main
+    uses: schubergphilis/mcaf-github-workflows/.github/workflows/update-changelog.yml@main
     secrets:
       mcaf-github-token: ${{secrets.MCAF_GITHUB_TOKEN}}
