@@ -16,6 +16,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 **Full Changelog**: https://github.com/schubergphilis/terraform-aws-mcaf-user/compare/v0.3.2...v0.3.3
 
+## v0.3.2 - 2023-03-20
+
+### What's Changed
+
+#### 📖 Documentation
+
+- docs: centralize github actions and improve readme (#24) @marwinbaumannsbp
+
+**Full Changelog**: https://github.com/schubergphilis/terraform-aws-mcaf-user/compare/v0.3.1...v0.3.2
+
 ## v0.3.1 - 2023-03-20
 
 ### What's Changed
