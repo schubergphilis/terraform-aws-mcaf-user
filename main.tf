@@ -18,7 +18,8 @@ resource "aws_iam_user" "default" {
 }
 
 resource "aws_iam_access_key" "default" {
-  user = aws_iam_user.default.name
+  count = var.create_iam_access_key ? 1 : 0
+  user  = aws_iam_user.default.name
 }
 
 resource "aws_iam_group" "default" {
@@ -48,27 +49,31 @@ resource "aws_iam_user_group_membership" "default" {
 }
 
 resource "aws_ssm_parameter" "access_key_id" {
+  count = var.create_iam_access_key ? 1 : 0
+
   name   = "/${lower(local.ssm_name)}${var.postfix ? "account" : ""}/credentials/access_key_id"
   key_id = var.kms_key_id
   type   = "SecureString"
-  value  = aws_iam_access_key.default.id
+  value  = aws_iam_access_key.default[0].id
   tags   = var.tags
 }
 
 resource "aws_ssm_parameter" "secret_access_key" {
+  count = var.create_iam_access_key ? 1 : 0
+
   name   = "/${lower(local.ssm_name)}${var.postfix ? "account" : ""}/credentials/secret_access_key"
   key_id = var.kms_key_id
   type   = "SecureString"
-  value  = aws_iam_access_key.default.secret
+  value  = aws_iam_access_key.default[0].secret
   tags   = var.tags
 }
 
 resource "aws_ssm_parameter" "ses_smtp_password_v4" {
-  count = var.ssm_ses_smtp_password_v4 ? 1 : 0
+  count = var.create_iam_access_key && var.ssm_ses_smtp_password_v4 ? 1 : 0
 
   name   = "/${lower(local.ssm_name)}${var.postfix ? "account" : ""}/credentials/ses_smtp_password_v4"
   key_id = var.kms_key_id
   type   = "SecureString"
-  value  = aws_iam_access_key.default.ses_smtp_password_v4
+  value  = aws_iam_access_key.default[0].ses_smtp_password_v4
   tags   = var.tags
 }

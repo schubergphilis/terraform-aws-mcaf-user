@@ -4,6 +4,12 @@ variable "create_policy" {
   description = "Overrule whether the user role policy has to be created."
 }
 
+variable "create_iam_access_key" {
+  type        = bool
+  default     = true
+  description = "Overrule whether the user IAM access keys have to be created"
+}
+
 variable "force_destroy" {
   type        = bool
   default     = false

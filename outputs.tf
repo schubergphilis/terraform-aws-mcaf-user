@@ -1,5 +1,5 @@
 output "access_key_id" {
-  value       = aws_iam_access_key.default.id
+  value       = try(aws_iam_access_key.default[0].id, "")
   description = "The access key ID"
 }
 
@@ -14,24 +14,24 @@ output "name" {
 }
 
 output "secret_access_key" {
-  value       = aws_iam_access_key.default.secret
+  value       = try(aws_iam_access_key.default[0].secret, "")
   description = "The secret access key"
   sensitive   = true
 }
 
 output "ses_smtp_password_v4" {
-  value       = aws_iam_access_key.default.ses_smtp_password_v4
+  value       = try(aws_iam_access_key.default[0].ses_smtp_password_v4, "")
   description = "The SES SMTP password"
   sensitive   = true
 }
 
 output "ssm_access_key_id" {
-  value       = aws_ssm_parameter.access_key_id.name
+  value       = try(aws_ssm_parameter.access_key_id[0].name, "")
   description = "The SSM access key ID parameter name"
 }
 
 output "ssm_secret_access_key" {
-  value       = aws_ssm_parameter.secret_access_key.name
+  value       = try(aws_ssm_parameter.secret_access_key[0].name, "")
   description = "The SSM secret access key parameter name"
 }
 
