@@ -5,6 +5,16 @@ All notable changes to this project will automatically be documented in this fil
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## v0.4.0 - 2023-08-04
+
+### What's Changed
+
+#### 🚀 Features
+
+- feat: add a variable to be able to disable IAM access key creation (#31) @marwinbaumannsbp
+
+**Full Changelog**: https://github.com/schubergphilis/terraform-aws-mcaf-user/compare/v0.3.3...v0.4.0
+
 ## v0.3.3 - 2023-03-20
 
 ### What's Changed
