@@ -71,5 +71,6 @@ variable "ssm_ses_smtp_password_v4" {
 
 variable "tags" {
   type        = map(string)
+  default     = null
   description = "A mapping of tags to assign to the user."
 }
