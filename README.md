@@ -47,7 +47,6 @@ No modules.
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | <a name="input_name"></a> [name](#input\_name) | The name of the user. | `string` | n/a | yes |
-| <a name="input_tags"></a> [tags](#input\_tags) | A mapping of tags to assign to the user. | `map(string)` | n/a | yes |
 | <a name="input_create_iam_access_key"></a> [create\_iam\_access\_key](#input\_create\_iam\_access\_key) | Overrule whether the user IAM access keys have to be created | `bool` | `true` | no |
 | <a name="input_create_policy"></a> [create\_policy](#input\_create\_policy) | Overrule whether the user role policy has to be created. | `bool` | `null` | no |
 | <a name="input_force_destroy"></a> [force\_destroy](#input\_force\_destroy) | Destroy the user even if it has non-terraform-managed IAM access keys, login profile or MFA devices | `bool` | `false` | no |
@@ -59,6 +58,7 @@ No modules.
 | <a name="input_policy_arns"></a> [policy\_arns](#input\_policy\_arns) | A set of policy ARNs to attach to the user. | `set(string)` | `[]` | no |
 | <a name="input_postfix"></a> [postfix](#input\_postfix) | Postfix the user, policy and group names with Account, Policy and Group. | `bool` | `true` | no |
 | <a name="input_ssm_ses_smtp_password_v4"></a> [ssm\_ses\_smtp\_password\_v4](#input\_ssm\_ses\_smtp\_password\_v4) | Store the user's SES SMTP password in the SSM Parameter Store. | `bool` | `false` | no |
+| <a name="input_tags"></a> [tags](#input\_tags) | A mapping of tags to assign to the user. | `map(string)` | `null` | no |
 
 ## Outputs
 
