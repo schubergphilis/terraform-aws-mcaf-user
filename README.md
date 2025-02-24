@@ -15,14 +15,14 @@ IMPORTANT: We do not pin modules to versions in our examples. We highly recommen
 
 | Name | Version |
 |------|---------|
-| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.1.0 |
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.3.0 |
 | <a name="requirement_aws"></a> [aws](#requirement\_aws) | >= 3.13.0 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| <a name="provider_aws"></a> [aws](#provider\_aws) | >= 3.13.0 |
+| <a name="provider_aws"></a> [aws](#provider\_aws) | 5.88.0 |
 
 ## Modules
 
@@ -46,12 +46,12 @@ No modules.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_name"></a> [name](#input\_name) | The name of the user. | `string` | n/a | yes |
 | <a name="input_create_iam_access_key"></a> [create\_iam\_access\_key](#input\_create\_iam\_access\_key) | Overrule whether the user IAM access keys have to be created | `bool` | `true` | no |
 | <a name="input_create_policy"></a> [create\_policy](#input\_create\_policy) | Overrule whether the user role policy has to be created. | `bool` | `null` | no |
 | <a name="input_force_destroy"></a> [force\_destroy](#input\_force\_destroy) | Destroy the user even if it has non-terraform-managed IAM access keys, login profile or MFA devices | `bool` | `false` | no |
 | <a name="input_groups"></a> [groups](#input\_groups) | Set of group names to attach to the user. | `set(string)` | `[]` | no |
 | <a name="input_kms_key_id"></a> [kms\_key\_id](#input\_kms\_key\_id) | The KMS key ID used to encrypt the SSM parameters. | `string` | `null` | no |
+| <a name="input_name"></a> [name](#input\_name) | The name of the user. | `string` | n/a | yes |
 | <a name="input_path"></a> [path](#input\_path) | Path in which to create the user. | `string` | `"/"` | no |
 | <a name="input_permissions_boundary"></a> [permissions\_boundary](#input\_permissions\_boundary) | The ARN of the policy that is used to set the permissions boundary for the user. | `string` | `null` | no |
 | <a name="input_policy"></a> [policy](#input\_policy) | The policy to attach to the user. | `string` | `null` | no |
