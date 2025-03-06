@@ -12,8 +12,10 @@ data "aws_iam_policy_document" "allow_iam_user_to_send_emails" {
 }
 
 module "smtp_user" {
-  source                   = "../../"
+  source = "../../"
+
   name                     = "SmtpUser"
+  create_policy            = true
   policy                   = data.aws_iam_policy_document.allow_iam_user_to_send_emails.json
   postfix                  = false
   ssm_ses_smtp_password_v4 = true
