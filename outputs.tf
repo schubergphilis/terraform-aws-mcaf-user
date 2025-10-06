@@ -13,6 +13,12 @@ output "name" {
   description = "The user name"
 }
 
+variable "region" {
+  type        = string
+  default     = null
+  description = "The AWS region where resources will be created; if omitted the default provider region is used"
+}
+
 output "secret_access_key" {
   value       = try(aws_iam_access_key.default[0].secret, "")
   description = "The secret access key"

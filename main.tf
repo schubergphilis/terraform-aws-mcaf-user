@@ -51,6 +51,7 @@ resource "aws_iam_user_group_membership" "default" {
 resource "aws_ssm_parameter" "access_key_id" {
   count = var.create_iam_access_key ? 1 : 0
 
+  region = var.region
   name   = "/${lower(local.ssm_name)}${var.postfix ? "account" : ""}/credentials/access_key_id"
   key_id = var.kms_key_id
   type   = "SecureString"
@@ -61,6 +62,7 @@ resource "aws_ssm_parameter" "access_key_id" {
 resource "aws_ssm_parameter" "secret_access_key" {
   count = var.create_iam_access_key ? 1 : 0
 
+  region = var.region
   name   = "/${lower(local.ssm_name)}${var.postfix ? "account" : ""}/credentials/secret_access_key"
   key_id = var.kms_key_id
   type   = "SecureString"
@@ -71,6 +73,7 @@ resource "aws_ssm_parameter" "secret_access_key" {
 resource "aws_ssm_parameter" "ses_smtp_password_v4" {
   count = var.create_iam_access_key && var.ssm_ses_smtp_password_v4 ? 1 : 0
 
+  region = var.region
   name   = "/${lower(local.ssm_name)}${var.postfix ? "account" : ""}/credentials/ses_smtp_password_v4"
   key_id = var.kms_key_id
   type   = "SecureString"
