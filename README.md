@@ -16,13 +16,13 @@ IMPORTANT: We do not pin modules to versions in our examples. We highly recommen
 | Name | Version |
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.3.0 |
-| <a name="requirement_aws"></a> [aws](#requirement\_aws) | >= 3.13.0 |
+| <a name="requirement_aws"></a> [aws](#requirement\_aws) | ~> 6.0 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| <a name="provider_aws"></a> [aws](#provider\_aws) | >= 3.13.0 |
+| <a name="provider_aws"></a> [aws](#provider\_aws) | ~> 6.0 |
 
 ## Modules
 
@@ -57,6 +57,7 @@ No modules.
 | <a name="input_policy"></a> [policy](#input\_policy) | The policy to attach to the user. | `string` | `null` | no |
 | <a name="input_policy_arns"></a> [policy\_arns](#input\_policy\_arns) | A set of policy ARNs to attach to the user. | `set(string)` | `[]` | no |
 | <a name="input_postfix"></a> [postfix](#input\_postfix) | Postfix the user, policy and group names with Account, Policy and Group. | `bool` | `true` | no |
+| <a name="input_region"></a> [region](#input\_region) | The AWS region where resources will be created; if omitted the default provider region is used | `string` | `null` | no |
 | <a name="input_ssm_ses_smtp_password_v4"></a> [ssm\_ses\_smtp\_password\_v4](#input\_ssm\_ses\_smtp\_password\_v4) | Store the user's SES SMTP password in the SSM Parameter Store. | `bool` | `false` | no |
 | <a name="input_tags"></a> [tags](#input\_tags) | A mapping of tags to assign to the user. | `map(string)` | `null` | no |
 
