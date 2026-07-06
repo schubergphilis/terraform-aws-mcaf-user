@@ -1,3 +1,9 @@
+<!-- migrate-repo:banner -->
+> [!IMPORTANT]
+> **This repository has moved to [`schubergphilis-ep/terraform-aws-mcaf-user`](https://github.com/schubergphilis-ep/terraform-aws-mcaf-user).**
+> Please update your references and use the new location for issues, PRs, and contributions.
+<!-- migrate-repo:banner -->
+
 # terraform-aws-mcaf-user
 
 Terraform module to create an IAM user. Suitable for e.g. CI/CD systems or systems which are external to AWS that cannot leverage AWS IAM Roles, AWS IAM Instance Profiles or AWS OIDC.
